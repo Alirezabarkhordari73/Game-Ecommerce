@@ -1,0 +1,16 @@
+.searchbox-input-feild{
+    width: 25rem;
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 0.2rem;
+    border: 0.1rem solid #3a3b3b;
+}
+.searchbox-btn{
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: #3e92ff;
+    color: #fff;
+    margin-right: 0.2rem;
+    border: 0.1rem solid #3e92ff;
+    border-radius: 0.2rem;
+}

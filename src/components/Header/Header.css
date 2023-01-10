@@ -1,0 +1,219 @@
+/* Header */
+.header-container{
+    z-index: 20;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    height: 90px;
+    background-color: #fff;
+    padding: 0 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.082) 0px 5px 7px -1px, rgba(0, 0, 0, 0.06) 0px 3px 5px -1px;
+}
+.header-container-dark{
+    overflow-wrap: normal;
+    z-index: 20;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    height: 90px;
+    background-color: var(--darktheme-background1);
+    padding: 0 1.2rem;
+    box-shadow: rgba(0, 0, 0, 0.205) 0px 5px 7px -1px, rgba(0, 0, 0, 0.06) 0px 3px 5px -1px;
+}
+.logo-navlink-section{
+    display: flex;
+    align-items: center;
+    /* width: 70%; */
+}
+.logo{
+    width: 65px;
+    height: 65px;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(100deg, rgba(255, 217, 135, 0.781) 0%, rgb(255, 145, 191) 100%);
+    border-radius: 0.7rem;
+    transition: 1s;
+}
+.logo:hover{
+    background: linear-gradient(100deg, rgba(129, 199, 132, 0.781) 0%, rgb(181, 188, 255) 100%);
+}
+.Logo-image{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.shopping-Section{
+    cursor: pointer;
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    margin-right: 2.5rem;
+    font-size: 1.7rem;
+    position: relative;
+    padding: 0.2rem;
+}
+.cart-icon{
+    font-size: 1.7rem;
+    cursor: pointer;
+    position: relative;
+    transition: transform .4s ease;
+    border: none;
+    background-color: transparent;
+}
+.Header-icon{
+    color: rgb(27, 27, 27);
+}
+.Header-icon:hover{
+    animation: rotate-center 0.6s ease-in-out both;
+    color: var(--main-blue);
+}
+
+.Header-icon-dark{
+    color: rgb(255, 255, 255);
+}
+.Shopping-Badge{
+    position: absolute;
+    right: -8px;
+    font-size: 12px;
+    color: #eee;
+    background-color: #3e92ff;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 600;
+}
+/* ////////////////////////////////////////////// */
+.ThemeModal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 0.5rem;
+    width: 130px;
+    height: 100px;
+    background-color: #ffffff;
+    color: #000;
+    right: -110px;
+    top: 40px;
+    border: none;
+    transition: all 0.5s ease-out;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.210);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.210);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.210);
+    animation-duration: 0.1s;
+    animation-name: ModalSelectorSlidIn;
+    padding: 0.2rem;
+    gap: 0.2rem;
+}
+.ThemeModal-dark{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 130px;
+    height: 100px;
+    background-color: rgb(37, 57, 82);
+    color: #fff;
+    right: -110px;
+    top: 40px;
+    border: none;
+    transition: all 0.5s ease-out;
+    -webkit-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.210);
+    -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.210);
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.210);
+    animation-duration: 0.1s;
+    animation-name: ModalSelectorSlidIn;
+    padding: 0.5rem;
+    gap: 0.2rem;
+}
+.ThemeModal-icon:hover{
+    animation: rotate-center 0.6s ease-in-out both;
+}
+@keyframes ModalSelectorSlidIn {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 0.2;
+    }
+    40% {
+        opacity: 0.4;
+      }
+    
+    60% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.Sun{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    height: 40%;
+}
+.Sun span{
+    margin-right: 0.3rem;
+}
+.Sun.active{
+    color: #3e92ff;
+}
+.Moon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    height: 40%;
+}
+.Moon span{
+    margin-right: 0.3rem;
+} 
+.Moon.active{
+    color: #4b99ff;
+}
+@-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);         
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);           
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);           
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);           
+    }
+  }
+

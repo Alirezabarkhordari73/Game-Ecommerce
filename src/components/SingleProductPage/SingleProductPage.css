@@ -1,0 +1,199 @@
+.SingleProductContainer{
+    width: 100%;
+    height: 100%;
+    margin-top: 3rem;
+}
+.product-info-section{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+}
+.product-image{
+    width: 500px;
+    height: 600px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.product-info{
+    padding: 2rem;
+    background-color: #fff;
+    height: 600px;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.rate{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.useridea{
+    color: rgb(49, 49, 49);
+}
+.price{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: crimson;
+    margin: 1rem 0;
+}
+.description{
+    color: rgb(63, 63, 63);
+    font-size: 1.1rem;
+}
+.add-minus-btn{
+    width: 40px;
+    height: 40px;
+    background-color: var(--main-blue);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.quantity{
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgb(207, 228, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.q-btns{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2rem;
+}
+.add-to-cart-btn{
+    background-color: var(--main-blue);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    margin: 0 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.detail-section{
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 5rem 0;
+    padding: 3rem;
+}
+.system-requirments{
+    width: 100%;
+    margin-bottom: 3rem;
+}
+.req-text{
+    text-align: left;
+    color: rgb(97, 97, 97);
+}
+.detail-nav-container{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.detail-nav-list{
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    align-items: center;
+    list-style: none;
+}
+.nav-detail-item:after{
+    content: "";
+    position: absolute;
+    background-color: #3e92ff;
+    height: 2px;
+    width: 0;
+    right: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.nav-detail-item-dark:after{
+    right: 0;
+    content: "";
+    position: absolute;
+    background-color: #3e92ff;
+    height: 2px;
+    width: 0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.nav-detail-item:hover:after{
+    width: 100%;
+}
+.nav-detail-item-dark:hover:after{
+    width: 100%;
+}
+.nav-detail-item{
+    position: relative;
+    font-size: 1rem;
+    cursor: pointer;
+    color: rgb(44, 44, 44);
+    font-weight: 600;
+    padding: 0 0.1rem;
+}
+.nav-detail-item-dark{
+    position: relative;
+    font-size: 1rem;
+    cursor: pointer;
+    color: rgb(224, 224, 224);
+    font-weight: 600;
+    padding: 0 0.1rem;
+}
+.description-detail{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+.product-detail-image{
+    width: 700px;
+    height: 800px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.detail-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+.underline{
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    margin-bottom: 2rem;
+    border-radius: 20px;
+}
+.underline::after{
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    filter: blur(24px);
+    position: absolute;
+    inset: -.1em;
+    border-radius: 10px;
+}
+
+
+        

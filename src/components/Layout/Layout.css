@@ -1,0 +1,41 @@
+.Layout-container{
+    background-color: rgb(240, 240, 240);
+    position: relative;
+    overflow: hidden;
+}
+.Layout-content{
+    min-height: 100vh;
+    padding: 1.3rem 4rem;
+}
+.Layout-container-dark{
+    background-color: var(--darktheme-background2);
+    position: relative;
+    overflow: hidden;
+}
+.Layout-content-dark{
+    min-height: 100vh;
+    padding: 1.3rem 4rem;
+    color: #fff;
+}
+@media (max-width: 1024px){
+    .Layout-content{
+        min-height: 100vh;
+        padding: 1rem 1rem;
+    } 
+    .Layout-content-dark{
+        min-height: 100vh;
+        padding: 1rem 1rem;
+        color: #fff;
+    }
+}
+@media (max-width: 480px){
+    .Layout-content{
+        min-height: 100vh;
+        padding: 1rem 1rem;
+    } 
+    .Layout-content-dark{
+        min-height: 100vh;
+        padding: 1rem 1rem;
+        color: #fff;
+    }
+}

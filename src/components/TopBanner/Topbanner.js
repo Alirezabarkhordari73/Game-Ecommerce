@@ -28,8 +28,7 @@ function Topbanner() {
         slidesPerView={1}
         navigation
         centeredSlides={true}
-        pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}>
+        pagination={{ clickable: true }}>
         {products ? (
           products.map((product) => (
             <SwiperSlide key={product._id}>

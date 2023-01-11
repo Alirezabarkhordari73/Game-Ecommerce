@@ -228,7 +228,7 @@ const HomePageContent = () => {
         )}
       </div>
       <div className={darkMode ? "qestions-section" : "qestions-section-dark"}>
-        <img src={image1} alt="i" />
+        <img src={image1} alt="i" className="question-img" />
         <div className="qustion-text-section">
           <p className="text title">سوالات متداول</p>
           <p className="text">

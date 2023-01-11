@@ -165,7 +165,7 @@
     padding-bottom: 5rem;
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1rem;
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin-bottom: 5rem;
@@ -176,11 +176,16 @@
     padding: 1.5rem;
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1rem;
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.356);
     margin-bottom: 5rem;
     padding-bottom: 5rem;
+}
+.question-img{
+    object-fit: cover;
+    width: 500px;
+    height: 700px;
 }
 .qustion-text-section{
     display: flex;
@@ -216,6 +221,60 @@
     font-size: 3rem;
     color: #fff;
 }
+@media (min-width: 0px) and (max-width: 479px) {
+    .qestions-section{       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;      
+        align-items: center;
+    }
+    .qestions-section-dark{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;     
+        align-items: center;
+        
+    }
+    .add-title{
+        font-size: 1rem;
+    }
+    .question-img{
+        object-fit: cover;
+        width: 300px;
+        height: 400px;
+    }
+    .Cart{
+        width: 220px;
+        height: 380px; 
+    }
+}
+@media (min-width: 480px) and (max-width: 768px) {
+    .qestions-section{       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;      
+        align-items: center;
+    }
+    .qestions-section-dark{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;     
+        align-items: center;
+        
+    }
+    .add-title{
+        font-size: 1.1rem;
+    }
+    .question-img{
+        object-fit: cover;
+        width: 400px;
+        height: 500px;
+    }
+    .Cart{
+        width: 240px;
+        height: 380px; 
+    }
+}
 @media (min-width: 769px) and (max-width: 1024px) {
     .qestions-section{       
         display: flex;
@@ -232,6 +291,10 @@
     }
     .add-title{
         font-size: 1.1rem;
+    }
+    .Cart{
+        width: 250px;
+        height: 380px; 
     }
 }
 @media (min-width: 480px) and (max-width: 768px) {

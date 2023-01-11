@@ -106,12 +106,14 @@ const HomePageContent = () => {
         )}
       </div>
       <div className="add-container">
-        <h1>سوالی داری ؟ مشکلی داری ؟ بلد نیستی چجوری سفارش بدی ؟</h1>
+        <h1 className="add-title">
+          سوالی داری ؟ مشکلی داری ؟ بلد نیستی چجوری سفارش بدی ؟
+        </h1>
         <GrIntegration className="add-icon" />
-        <p style={{ color: "#fff", fontSize: "1.1rem" }}>
+        <p className="add-text">
           با این شماره تماس بگیر تا همکارامون راهنماییت کنن{" "}
         </p>
-        <p style={{ color: "#fff", fontSize: "1.1rem" }}>091389523723</p>
+        <p className="add-text">091389523723</p>
       </div>
       <div className={darkMode ? "PS4-Section" : "PS4-Section-dark"}>
         <p className="Box-Title">لیست بازی های PS4</p>

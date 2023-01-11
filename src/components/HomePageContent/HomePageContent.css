@@ -136,8 +136,8 @@
 }
 .Box-Title{
     font-weight: bold;
-    font-size: 1.1rem;
-    margin-bottom: 1.3rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
 }
 .myrating{
     font-size: 1.5rem;
@@ -162,11 +162,13 @@
     background-color: #fff;
     border-radius: 0.2rem;
     padding: 1.5rem;
+    padding-bottom: 5rem;
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-bottom: 5rem;
 }
 .qestions-section-dark{
     background-color: var(--darktheme-background1);
@@ -177,6 +179,8 @@
     gap: 0.5rem;
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.356);
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
 }
 .qustion-text-section{
     display: flex;
@@ -189,6 +193,20 @@
 }
 .title{
     font-weight: bold;
+}
+.add-container{
+    width: 100%;
+    height: 380px;
+    background-color: rgb(43, 69, 153);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.add-icon{
+    font-size: 3rem;
+    color: #fff;
 }
 @media (min-width: 769px) and (max-width: 1024px) {
     .qestions-section{       

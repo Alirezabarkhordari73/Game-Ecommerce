@@ -4,6 +4,7 @@ import { FreeMode, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Rating from "react-rating";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { GrIntegration } from "react-icons/gr";
 
 import { listProduct } from "../../Redux/Actions/ProductActions";
 import image1 from "../../assets/image1.png";
@@ -104,6 +105,14 @@ const HomePageContent = () => {
           </Swiper>
         )}
       </div>
+      <div className="add-container">
+        <h1>سوالی داری ؟ مشکلی داری ؟ بلد نیستی چجوری سفارش بدی ؟</h1>
+        <GrIntegration className="add-icon" />
+        <p style={{ color: "#fff", fontSize: "1.1rem" }}>
+          با این شماره تماس بگیر تا همکارامون راهنماییت کنن{" "}
+        </p>
+        <p style={{ color: "#fff", fontSize: "1.1rem" }}>091389523723</p>
+      </div>
       <div className={darkMode ? "PS4-Section" : "PS4-Section-dark"}>
         <p className="Box-Title">لیست بازی های PS4</p>
         {loading ? (
@@ -126,29 +135,35 @@ const HomePageContent = () => {
             {products ? (
               products.map((product) => (
                 <SwiperSlide key={product._id}>
-                  <div className="Cart">
-                    <img
-                      className="Cart-image"
-                      src={product.image}
-                      alt={product.title}
-                    />
-                    <div className="Cart-info">
-                      <p>خرید بازی</p>
-                      <p>{product.title}</p>
-                    </div>
-                    <div className="Cart-btn">
-                      <p>برای XBOX 360</p>
-                      <Rating
-                        emptySymbol={<AiOutlineStar className="star-icons" />}
-                        fullSymbol={<AiFillStar className="full-star-icons" />}
-                        initialRating={product.rating}
-                        className="myrating"
+                  <Link
+                    to={`products/${product._id}`}
+                    className={darkMode ? "n-link" : "n-link-dark"}>
+                    <div className="Cart">
+                      <img
+                        className="Cart-image"
+                        src={product.image}
+                        alt={product.title}
                       />
-                      <button className="addtocart-btn">
-                        افزودن به سبد خرید
-                      </button>
+                      <div className="Cart-info">
+                        <p>خرید بازی</p>
+                        <p>{product.title}</p>
+                      </div>
+                      <div className="Cart-btn">
+                        <p>برای XBOX 360</p>
+                        <Rating
+                          emptySymbol={<AiOutlineStar className="star-icons" />}
+                          fullSymbol={
+                            <AiFillStar className="full-star-icons" />
+                          }
+                          initialRating={product.rating}
+                          className="myrating"
+                        />
+                        <button className="addtocart-btn">
+                          افزودن به سبد خرید
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </SwiperSlide>
               ))
             ) : (

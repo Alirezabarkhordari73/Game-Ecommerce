@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 import Layout from "../components/Layout/Layout";
@@ -13,7 +13,7 @@ function Home() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}>
       <Layout>
-        {/* <Topbanner  /> */}
+        <Topbanner />
         <HomePageContent />
       </Layout>
     </motion.div>

@@ -1,3 +1,21 @@
+.rainbow-br{
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    margin-bottom: 2rem;
+    border-radius: 20px;
+}
+.rainbow-br::after{
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red);
+    filter: blur(24px);
+    position: absolute;
+    inset: -.1em;
+    border-radius: 10px;
+}
 .n-link{
     list-style: none;
     color: black;

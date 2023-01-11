@@ -16,6 +16,7 @@ import "swiper/css/scrollbar";
 import { useStateContext } from "../../context/StateContext";
 import { addToCart } from "../../Redux/Actions/cartActions";
 import data from "../../data";
+import { Link } from "react-router-dom";
 
 const HomePageContent = () => {
   const [defineGameType, setDefineGameType] = useState("");
@@ -39,6 +40,7 @@ const HomePageContent = () => {
 
   return (
     <div className="HomePageContainer">
+      <div className="rainbow-br" />
       <div className={darkMode ? "Xbox-Section" : "Xbox-Section-dark"}>
         <p className="Box-Title">لیست بازی های XBOX-360</p>
         {loading ? (
@@ -58,41 +60,47 @@ const HomePageContent = () => {
               768: { slidesPerView: 3, spaceBetween: 15 },
               1280: { slidesPerView: 4, spaceBetween: 25 },
             }}>
-            {products.map((product) => (
-              <SwiperSlide key={product._id}>
-                {/* <Link
-                  to={`products/${product._id}`}
-                  className={darkMode ? "n-link" : "n-link-dark"}> */}
-                <div
-                  className="Cart"
-                  onClick={() => setDefineGameType("XBOX-360")}>
-                  <img
-                    className="Cart-image"
-                    src={product.image}
-                    alt={product.title}
-                  />
-                  <div className="Cart-info">
-                    <p>خرید بازی</p>
-                    <p>{product.title}</p>
-                  </div>
-                  <div className="Cart-btn">
-                    <p>برای XBOX 360</p>
-                    <Rating
-                      emptySymbol={<AiOutlineStar className="star-icons" />}
-                      fullSymbol={<AiFillStar className="full-star-icons" />}
-                      initialRating={product.rating}
-                      className="myrating"
-                    />
-                    <button
-                      onClick={() => addToCartHandler(product)}
-                      className="addtocart-btn">
-                      افزودن به سبد خرید
-                    </button>
-                  </div>
-                </div>
-                {/* </Link> */}
-              </SwiperSlide>
-            ))}
+            {products ? (
+              products.map((product) => (
+                <SwiperSlide key={product._id}>
+                  <Link
+                    to={`products/${product._id}`}
+                    className={darkMode ? "n-link" : "n-link-dark"}>
+                    <div
+                      className="Cart"
+                      onClick={() => setDefineGameType("XBOX-360")}>
+                      <img
+                        className="Cart-image"
+                        src={product.image}
+                        alt={product.title}
+                      />
+                      <div className="Cart-info">
+                        <p>خرید بازی</p>
+                        <p>{product.title}</p>
+                      </div>
+                      <div className="Cart-btn">
+                        <p>برای XBOX 360</p>
+                        <Rating
+                          emptySymbol={<AiOutlineStar className="star-icons" />}
+                          fullSymbol={
+                            <AiFillStar className="full-star-icons" />
+                          }
+                          initialRating={product.rating}
+                          className="myrating"
+                        />
+                        <button
+                          onClick={() => addToCartHandler(product)}
+                          className="addtocart-btn">
+                          افزودن به سبد خرید
+                        </button>
+                      </div>
+                    </div>
+                  </Link>
+                </SwiperSlide>
+              ))
+            ) : (
+              <div>Loading...</div>
+            )}
           </Swiper>
         )}
       </div>
@@ -115,33 +123,37 @@ const HomePageContent = () => {
               768: { slidesPerView: 3, spaceBetween: 15 },
               1280: { slidesPerView: 4, spaceBetween: 25 },
             }}>
-            {products.map((product) => (
-              <SwiperSlide key={product._id}>
-                <div className="Cart">
-                  <img
-                    className="Cart-image"
-                    src={product.image}
-                    alt={product.title}
-                  />
-                  <div className="Cart-info">
-                    <p>خرید بازی</p>
-                    <p>{product.title}</p>
-                  </div>
-                  <div className="Cart-btn">
-                    <p>برای XBOX 360</p>
-                    <Rating
-                      emptySymbol={<AiOutlineStar className="star-icons" />}
-                      fullSymbol={<AiFillStar className="full-star-icons" />}
-                      initialRating={product.rating}
-                      className="myrating"
+            {products ? (
+              products.map((product) => (
+                <SwiperSlide key={product._id}>
+                  <div className="Cart">
+                    <img
+                      className="Cart-image"
+                      src={product.image}
+                      alt={product.title}
                     />
-                    <button className="addtocart-btn">
-                      افزودن به سبد خرید
-                    </button>
+                    <div className="Cart-info">
+                      <p>خرید بازی</p>
+                      <p>{product.title}</p>
+                    </div>
+                    <div className="Cart-btn">
+                      <p>برای XBOX 360</p>
+                      <Rating
+                        emptySymbol={<AiOutlineStar className="star-icons" />}
+                        fullSymbol={<AiFillStar className="full-star-icons" />}
+                        initialRating={product.rating}
+                        className="myrating"
+                      />
+                      <button className="addtocart-btn">
+                        افزودن به سبد خرید
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              ))
+            ) : (
+              <div>Loading...</div>
+            )}
           </Swiper>
         )}
       </div>
@@ -164,38 +176,42 @@ const HomePageContent = () => {
               768: { slidesPerView: 3, spaceBetween: 15 },
               1280: { slidesPerView: 4, spaceBetween: 25 },
             }}>
-            {products.map((product) => (
-              <SwiperSlide key={product._id}>
-                <div className="Cart">
-                  <img
-                    className="Cart-image"
-                    src={product.image}
-                    alt={product.title}
-                  />
-                  <div className="Cart-info">
-                    <p>خرید بازی</p>
-                    <p>{product.title}</p>
-                  </div>
-                  <div className="Cart-btn">
-                    <p>برای XBOX 360</p>
-                    <Rating
-                      emptySymbol={<AiOutlineStar className="star-icons" />}
-                      fullSymbol={<AiFillStar className="full-star-icons" />}
-                      initialRating={product.rating}
-                      className="myrating"
+            {products ? (
+              products.map((product) => (
+                <SwiperSlide key={product._id}>
+                  <div className="Cart">
+                    <img
+                      className="Cart-image"
+                      src={product.image}
+                      alt={product.title}
                     />
-                    <button className="addtocart-btn">
-                      افزودن به سبد خرید
-                    </button>
+                    <div className="Cart-info">
+                      <p>خرید بازی</p>
+                      <p>{product.title}</p>
+                    </div>
+                    <div className="Cart-btn">
+                      <p>برای XBOX 360</p>
+                      <Rating
+                        emptySymbol={<AiOutlineStar className="star-icons" />}
+                        fullSymbol={<AiFillStar className="full-star-icons" />}
+                        initialRating={product.rating}
+                        className="myrating"
+                      />
+                      <button className="addtocart-btn">
+                        افزودن به سبد خرید
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              ))
+            ) : (
+              <div>Loading...</div>
+            )}
           </Swiper>
         )}
       </div>
       <div className={darkMode ? "qestions-section" : "qestions-section-dark"}>
-        <img src={image1} />
+        <img src={image1} alt="i" />
         <div className="qustion-text-section">
           <p className="text title">سوالات متداول</p>
           <p className="text">

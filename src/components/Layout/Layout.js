@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import Cart from "../Cart/Cart";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import "../Layout/Layout.css";
-import { Store } from "../../context/StateContext";
 import { useStateContext } from "../../context/StateContext";
 
 const Layout = ({ children }) => {

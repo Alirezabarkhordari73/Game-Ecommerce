@@ -25,12 +25,15 @@ export const productListReducer = (state = { products: [] }, action) => {
 
 //productdetail reducer
 export const productDetailReducer = (
-  state = { products: { reviews: [] } },
+  // state = { products: { reviews: [] } },
+  state = { products: [] },
   action
 ) => {
   switch (action.type) {
     case PRODUCT_DETAIL_REQUEST:
-      return { ...state, loading: true };
+      return { loading: false, products: action.payload };
+    // case PRODUCT_DETAIL_REQUEST:
+    //   return { ...state, loading: true };
     case PRODUCT_DETAIL_SUCCESS:
       return { loading: false, products: action.payload };
     case PRODUCT_DETAIL_FAIL:

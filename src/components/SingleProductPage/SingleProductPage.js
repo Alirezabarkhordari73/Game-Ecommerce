@@ -5,22 +5,26 @@ import Rating from "react-rating";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
 import "./SingleProductPage.css";
-import { ProductDetail, listProduct } from "../../Redux/Actions/ProductActions";
+import { ProductDetail } from "../../Redux/Actions/ProductActions";
+import { useStateContext } from "../../context/StateContext";
 
 const SingleProductPage = () => {
   const dispatch = useDispatch();
 
+  const { darkMode } = useStateContext();
+
   const productDetail = useSelector((state) => state.productDetail);
+
   // const { loading, products: productdetail, error } = productDetail;
   const { products, loading } = productDetail;
   console.log("sproducts", products[0]);
 
   const reqSystem = products[0]?.requierdsystem;
   const sugestedsystem = products[0]?.sugestedsystem;
-  console.log(sugestedsystem);
+  // console.log(sugestedsystem);
 
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   useEffect(() => {
     dispatch(ProductDetail(id));
@@ -30,7 +34,7 @@ const SingleProductPage = () => {
   return (
     <div className="SingleProductContainer">
       {loading && <div>Loading ...</div>}
-      {!loading && (
+      {products[0] && (
         <div className="product-info-section">
           <div className="image-box">
             <img
@@ -39,7 +43,7 @@ const SingleProductPage = () => {
               className="product-image"
             />
           </div>
-          <div className="product-info">
+          <div className={darkMode ? "product-info" : "product-info-dark"}>
             <h3>{`خرید بازی ${products[0]?.title} برای PC`}</h3>
             <div className="rate">
               <Rating
@@ -52,65 +56,67 @@ const SingleProductPage = () => {
             </div>
             <p className="price">{`${products[0]?.price} تومان`}</p>
             <p className="description">{products[0]?.description}</p>
-            <div className="q-btns">
-              <button className="add-minus-btn">+</button>
-              <div className="quantity">0</div>
-              <button className="add-minus-btn">-</button>
-              <button className="add-to-cart-btn">افزودن به سبد خرید</button>
-            </div>
           </div>
         </div>
       )}
-      <div className="detail-section">
-        <nav className="detail-nav-container">
-          <ul className="detail-nav-list">
-            <li className="nav-detail-item">توضیحات</li>
-            <li className="nav-detail-item">نظرات</li>
-          </ul>
-        </nav>
-        <div className="underline" />
-        <div className="box" />
-        <div className="description-detail">
-          {loading && "Loading ..."}
-          <div className="detail-content">
-            <h1>خرید بازی {products[0]?.title}</h1>
-            <img
-              src={products[0]?.image}
-              alt={products[0]?.title}
-              className="product-detail-image"
-            />
-            <p>{products[0]?.description}</p>
+      {products[0] && (
+        <div className={darkMode ? "detail-section" : "detail-section-dark"}>
+          <nav className="detail-nav-container">
+            <ul className="detail-nav-list">
+              <li className="nav-detail-item">توضیحات</li>
+              <li className="nav-detail-item">نظرات</li>
+            </ul>
+          </nav>
+          <div className="underline" />
+          <div className="box" />
+          <div className="description-detail">
+            {loading && "Loading ..."}
+            <div className="detail-content">
+              <h1>خرید بازی {products[0]?.title}</h1>
+              <img
+                src={products[0]?.image}
+                alt={products[0]?.title}
+                className="product-detail-image"
+              />
+              <p>{products[0]?.description}</p>
+            </div>
+          </div>
+          <div
+            className={
+              darkMode ? "system-requirments" : "system-requirments-dark"
+            }>
+            <h3>حداقل سیستم مورد نیاز :</h3>
+            {loading && "Loading ..."}
+            {reqSystem &&
+              Object.keys(reqSystem).map((key, index) => {
+                return (
+                  <div key={index}>
+                    <p className="req-text">
+                      {key}: {reqSystem[key]}
+                    </p>
+                  </div>
+                );
+              })}
+          </div>
+          <div
+            className={
+              darkMode ? "system-requirments" : "system-requirments-dark"
+            }>
+            <h3>سیستم پیشنهادی :</h3>
+            {loading && "Loading ..."}
+            {sugestedsystem &&
+              Object.keys(sugestedsystem).map((key, index) => {
+                return (
+                  <div key={index}>
+                    <p className="req-text">
+                      {key}: {sugestedsystem[key]}
+                    </p>
+                  </div>
+                );
+              })}
           </div>
         </div>
-        <div className="system-requirments">
-          <h3>حداقل سیستم مورد نیاز :</h3>
-          {loading && "Loading ..."}
-          {reqSystem &&
-            Object.keys(reqSystem).map((key, index) => {
-              return (
-                <div key={index}>
-                  <p className="req-text">
-                    {key}: {reqSystem[key]}
-                  </p>
-                </div>
-              );
-            })}
-        </div>
-        <div className="system-requirments">
-          <h3>سیستم پیشنهادی :</h3>
-          {loading && "Loading ..."}
-          {sugestedsystem &&
-            Object.keys(sugestedsystem).map((key, index) => {
-              return (
-                <div key={index}>
-                  <p className="req-text">
-                    {key}: {sugestedsystem[key]}
-                  </p>
-                </div>
-              );
-            })}
-        </div>
-      </div>
+      )}
     </div>
   );
 };

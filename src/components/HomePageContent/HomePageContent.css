@@ -245,7 +245,7 @@
         height: 400px;
     }
     .Cart{
-        width: 220px;
+        width: 100%;
         height: 380px; 
     }
 }
@@ -296,23 +296,5 @@
     .Cart{
         width: 250px;
         height: 380px; 
-    }
-}
-@media (min-width: 480px) and (max-width: 768px) {
-    .qestions-section{       
-        display: flex;
-        flex-direction: column;
-        justify-content: center;      
-        align-items: center;
-    }
-    .qestions-section-dark{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;     
-        align-items: center;
-        
-    }
-    .add-title{
-        font-size: 1rem;
     }
 }

@@ -20,7 +20,7 @@ function Topbanner() {
     <div className="topbanner-container">
       <Swiper
         modules={[Navigation, Pagination, A11y, Autoplay]}
-        spaceBetween={0}
+        spaceBetween={60}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
